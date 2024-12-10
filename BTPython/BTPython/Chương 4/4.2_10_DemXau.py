@@ -1,17 +1,17 @@
-rep = int(input())
-for i in range(1, rep + 1):
-    previous_char = None
-    s = input()
-    count = 1
-    kq = ""
-    for current_char in s:
-        if current_char == previous_char:
-            count += 1
-        else:
-            if previous_char is not None:
-                kq += f"{previous_char}{count}"
-                count = 1
-        previous_char = current_char
+n, q = map(int, input().split())
+s = input()
 
-    kq += f"{previous_char}{count}"
-    print(kq)
+freq = [[0] * (n + 1) for _ in range(26)]
+
+for i in range(1, n + 1):
+    char_idx = ord(s[i - 1]) - ord('a')
+    for j in range(26):
+        freq[j][i] = freq[j][i - 1]
+    freq[char_idx][i] += 1
+
+for _ in range(q):
+    l, r, c = input().split()
+    l, r = int(l), int(r)
+    char_idx = ord(c) - ord('a')
+    result = freq[char_idx][r] - freq[char_idx][l - 1]
+    print(result)
