@@ -5,4 +5,4 @@ for i in x:
     if i in a:
         print("YES")
     else:
-        print("NO")  
+        print("NO")

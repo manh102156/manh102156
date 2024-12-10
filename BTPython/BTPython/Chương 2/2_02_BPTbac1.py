@@ -1,12 +1,12 @@
 a, b = map(int, input().split())
 if a == 0:
     if b > 0:
-        print("PT co vo so nghiem")
+        print("VSN")
     if b<= 0:
-        print("PT vo nghiem")
+        print("VN")
 elif a>0:
     kq = float(-b/a)
-    print("PT co nghiem: x>{}".format(kq))
+    print("x>{}".format(kq))
 else:
     kq = float(-b/a)
-    print("PT co nghiem: x<{}".format(kq))
+    print("x<{}".format(kq))
