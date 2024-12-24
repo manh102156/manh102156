@@ -24,3 +24,6 @@ ds_sach.sort(key=lambda x:x.gia_tb(), reverse=True)
 
 for sach in ds_sach:
     sach.xuat()
+with open("sach.txt", "w") as file:
+    for sach in ds_sach:
+        file.write(f"Sach: {sach.ten}, {sach.so_trang} trang, gia {sach.gia_tien}d, gia trung binh/trang la {sach.gia_tb():.2f}d.")
